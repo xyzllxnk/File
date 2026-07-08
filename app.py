@@ -12,7 +12,7 @@ def hello():
 
 @app.route("/health")
 def health():
-    uptime = start_time - time.time()
+    uptime = time.time() - start_time
     status = "healthy" if uptime > 0 else "unhealthy"
     return {"status": status, "uptime_seconds": uptime}
 
